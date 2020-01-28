@@ -10,13 +10,13 @@ O projeto deve ser desenvolvido em React, Redux e TypeScript. Utilize o [CRA (cr
 
 O Front-End deve utilizar a lib [Material UI](https://material-ui.com/getting-started/installation/).
 
-Os produtos disponíveis devem ser recuperados através de uma API Rest, disponibilizada neste projeto.
+Os produtos disponíveis devem ser carregados utilizando a API Rest, disponibilizada neste projeto.
 
 ## Carrinho de Compras
 
 Seu objetivo é montar um carrinho de compras simples, conforme o prototipo a seguir:
 
-O layout deve ser como de um site de vendas convencional, com uma listagem de produtos, e um icone de carrinho de compras no topo do site. 
+O layout deve ser como de um site de vendas convencional, com uma listagem de produtos, e um icone de carrinho de compras no topo do site. (Queremos conhecer suas noções de design & UX)
 
 O icone do carrinho de compras deve exibir uma badge com a quantidade de itens presente no carrinho.
 
@@ -44,7 +44,7 @@ O carrinho deve:
   - Não deve permitir o usuário informar quantidade zero;
 - Exibir o somatório total dos itens incluidos;
 
-## Serviço Rest
+## API Rest
 
 Criar o backend não é o foco deste teste, portanto está sendo disponibilizado um serviço Rest que deve ser utilizado para recuperar a lista de produtos do projeto.
 
