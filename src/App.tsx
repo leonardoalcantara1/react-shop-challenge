@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import withTheme, { GlobalStyle, ThemeProps } from './Theme';
+import Header from './molecules/Header';
+import Footer from './molecules/Footer';
+
+import Home from './organisms/Home';
+
+const MaterialTheme = (theme: ThemeProps) => createMuiTheme({
+  palette: {
+    primary: {
+      main: theme.colors.primary
+    },
+    secondary: {
+      main: theme.colors.secondary
+    }
+  }
+});
+
+const App: React.FC = ({ theme }: any) => {
+  return <ThemeProvider theme={MaterialTheme(theme)}>
+    <GlobalStyle />
+    <Header />
+    <BrowserRouter>
+      <Switch>
+        <Route component={Home} />
+      </Switch>
+    </BrowserRouter>
+    <Footer />
+  </ThemeProvider>
 }
 
-export default App;
+export default withTheme(App);
