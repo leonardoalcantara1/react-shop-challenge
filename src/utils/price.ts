@@ -1,16 +1,9 @@
 const formatPrice = (price: number) => {
-  let finalPrice;
-  let stringPrice = price.toString().split('.');
-  
-  if (stringPrice.length > 1) {
-    finalPrice = stringPrice[0] + ',' + (
-      stringPrice[1].length === 1 ? stringPrice[1] + '0' : stringPrice[1]
-    );
+  if (price) {
+    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(price);
   } else {
-    finalPrice = stringPrice[0];
+    return '';
   }
-
-  return 'R$ ' + finalPrice;
 }
 
 export default formatPrice;

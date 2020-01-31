@@ -21,7 +21,7 @@ export const Container: any = withTheme(styled.header`
     transform: translateY(-3px);
   }
 
-  & > button {
+  & > a {
     color: ${({ theme }) => theme.colors.contrast};
     position: relative;
 
@@ -44,5 +44,26 @@ export const Container: any = withTheme(styled.header`
         transform: translateY(-1px);
       }
     }
+  }
+
+  .border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: ${({ scroll }: any) => scroll > 0 ? '100%' : '0'};
+    transition: 1s;
+    ${({ theme }) => {
+      const primary = theme.colors.primary;
+      const secondary = '#f8ae39';
+      return `
+        background: ${primary};
+        background: -moz-linear-gradient(-45deg, ${primary} 0%, ${secondary} 100%);
+        background: -webkit-linear-gradient(-45deg, ${primary} 0%, ${secondary} 100%);
+        background: linear-gradient(135deg, ${primary} 0%, ${secondary} 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='${primary}', endColorstr='${secondary}',GradientType=1 );
+      `;
+    }}
   }
 `);

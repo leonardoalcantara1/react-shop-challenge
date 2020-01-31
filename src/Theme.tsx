@@ -29,7 +29,7 @@ const Theme = createContext({
 });
 
 const withTheme = (Component: ReactType) => {
-  class ThemeComponent extends React.Component {
+  class ThemeComponent extends React.Component<any> {
     render() {
       return (
         <Theme.Consumer>

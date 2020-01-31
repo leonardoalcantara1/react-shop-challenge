@@ -58,9 +58,16 @@ export const ProductInfo = withTheme((styled.div`
     }
   }
   p {
-    margin-bottom: ${({ theme }) => theme.spacing * 2}px;
     @media (max-width: ${({ theme }) => theme.media.sm}px) {
       display: none;
+    }
+  }
+  .price {
+    font-size: 2em;
+    margin: ${({ theme }) => theme.spacing}px 0 ${({ theme }) => theme.spacing * 2}px;
+    line-height: 0.8em;
+    small {
+      font-size: 0.5em;
     }
   }
 `));

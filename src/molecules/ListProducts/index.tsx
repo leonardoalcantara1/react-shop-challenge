@@ -5,24 +5,23 @@ import {
 import withTheme from '../../Theme';
 import ProductItem from '../../atoms/ProductItem';
 
-const ListProducts = ({ theme }: any) => {
-  return <Grid container style={{ justifyContent: 'center', overflow: 'hidden' }}>
+const ListProducts = ({ theme, list }: any) => {
+  return <Grid
+    container
+    style={{
+      justifyContent: 'center',
+      overflow: 'hidden',
+      paddingTop: theme.spacing,
+      paddingBottom: theme.spacing
+    }}
+  >
     <Grid
       container
       spacing={3}
-      style={{
-        maxWidth: theme.utilArea,
-        padding: `${theme.spacing * 2}px 0`,
-        overflow: 'hidden'
-      }}
     >
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
+      {
+        list.map((item:any) => <ProductItem key={item.id} product={item} />)
+      }
     </Grid>
   </Grid>
 }
